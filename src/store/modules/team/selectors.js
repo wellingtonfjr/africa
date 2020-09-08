@@ -1,0 +1,1 @@
+export const getTeamsCurrent = state => state.teams.teamCurrent

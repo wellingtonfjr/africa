@@ -1,0 +1,1 @@
+export const getLevelCurrent = state => (state.game.level)

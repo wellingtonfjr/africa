@@ -36,7 +36,7 @@ const setTeams: Reducer<TeamsState> = (state = INITIAL_STATE, action) => {
     case TeamsTypes.UPDATE_POINTS: 
       const arrayTeam = state.teamCurrent ? 0 : 1
       return produce(state, draftState => {
-        draftState.teams[arrayTeam].points = action.data;
+        draftState.teams[arrayTeam].points += action.data;
       })
     default:
       return state;

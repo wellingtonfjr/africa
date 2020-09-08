@@ -1,11 +1,13 @@
+import { TeamsTypes } from './types'
+
 export const changeCurrentTeam = () => ({
-  type: '@team/CHANGE_CURRENT_TEAM',
+  type: TeamsTypes.CHANGE_CURRENT_TEAM,
 });
 
 export const setTeams = teams => {
   return dispatch => {
     dispatch({
-      type: '@team/SET_TEAM',
+      type: TeamsTypes.SET_TEAM,
       payload: teams,
     });
     dispatch(changeCurrentTeam(teams));
@@ -14,5 +16,12 @@ export const setTeams = teams => {
 };
 
 export const getTeams = () => ({
-  type: '@team/GET_TEAM',
+  type: TeamsTypes.GET_TEAM,
 });
+
+export function updatePoints(indexPlayedWords) {
+  return {
+    type: TeamsTypes.UPDATE_POINTS,
+    data: indexPlayedWords,
+  }
+}
